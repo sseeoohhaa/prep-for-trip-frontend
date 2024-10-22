@@ -1,0 +1,12 @@
+.place {
+    display: flex;
+    margin-top: 100px;
+}
+
+.placeInfo {
+    border: 2px solid pink;
+}
+
+.link {
+    margin-top: 100px;
+}

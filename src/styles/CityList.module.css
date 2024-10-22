@@ -1,0 +1,72 @@
+.cityList {
+    margin: 15px;
+    padding: 15px;
+
+    background-color: lightcyan; /*peachpuff*/
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 5px #62b0cb;
+    
+}
+
+.firstContent {
+    width: 50%;
+    padding: 15px;
+    box-sizing: border-box; /* 2px씩의 border를 포함하여 % width 설정 */
+    float: left;
+
+    display: flex; /* 이미지와 글 가로정렬 */
+
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.firstContent:hover {
+    box-shadow: -10px 10px 10px aqua;
+}
+
+.secondContent {
+    width: 50%;
+    margin-top: 500px;
+    padding: 15px;
+    box-sizing: border-box;
+
+    display: flex; /* image2의 float가 작동하지 않음. 주석 처리 */
+    float: right; /* secondContent를 화면 우측 끝에 배치 */
+
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.secondContent:hover {
+    box-shadow: 10px 10px 10px aqua;
+}
+
+.image {
+    /* float: right; secondContent에 display를 주고 width %를 주면 float를 쓰지 않아도 됨 */
+}
+
+.contentBox {
+    width: 40%;
+    padding: 10px;
+
+    font-size: 20px;
+}
+
+.content {
+    background-color: lightseagreen;
+}
+
+.detailBtn{
+    font-size: 30px;
+    border: 1px solid #62b0cb;
+    border-radius: 10px;
+}
+
+.detailBtn:hover {
+    color: white;
+    background-color:#62b0cb;
+}
+
+.footer {
+    clear: both;
+}

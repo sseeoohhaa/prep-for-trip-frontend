@@ -1,0 +1,27 @@
+.main {
+    /*background-color: lightblue;*/
+}
+
+.mapWrap {
+    position: relative;
+
+    border: 1px solid black;
+}
+
+.spot {
+    position: absolute;
+    top: 500px; /* %로 설정 시 창 크기가 변할 때마다 그에 맞춰 위치가 바뀐다. */
+    left: 450px;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 30px;
+    border: none;
+    background-color: transparent;
+}
+
+.spot:hover {
+    background-color: rgb(247, 143, 208, 0.5);
+    border: 3px solid magenta;
+}
