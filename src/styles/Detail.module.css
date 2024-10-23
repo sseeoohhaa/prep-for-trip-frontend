@@ -1,12 +1,14 @@
-.place {
+.mapContainer {
     display: flex;
     margin-top: 100px;
 }
 
-.placeInfo {
-    border: 2px solid pink;
+.placeList {
+    width: 20%;
+    border: 2px solid aqua;
 }
 
 .link {
     margin-top: 100px;
+    border: 2px solid aqua;
 }
