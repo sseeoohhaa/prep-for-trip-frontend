@@ -1,0 +1,12 @@
+.modalWindow {
+    position: absolute; /* to use z-index */
+    z-index: 10;
+    margin-left: 10vw; /* 가운데 정렬하기 위해서 margin 주기 */
+    /* display: flex; 자식 요소들이 가로 정렬된다 */
+    width: 80vw;
+    height: 100vh;
+    
+
+    border: 10px dotted aquamarine;
+    background-color: rgb(255, 255, 255);
+}
