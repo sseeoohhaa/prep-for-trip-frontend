@@ -3,9 +3,11 @@ import styles from "../styles/Map.module.css";
 // import MapMarker from "./MapMarker";
 
 function Map(props) {
+    console.log("Map페이지:" , props.markerInfo);
     const [map, setMap] = useState(props.map); // null
     const [lat, setLat] = useState(props.position[0]);
     const [lng, setLng] = useState(props.position[1]);
+
     const ref = useRef();
     
     useEffect(()=>{
@@ -24,7 +26,7 @@ function Map(props) {
 
     useEffect(() => {
         if(props.page == "main") {
-            props.markerInfo.forEach(({ position, title}) => {
+            props.markerInfo.forEach(({ lat, lng, english_name }) => {
             const pinElement = new window.google.maps.marker.PinElement({
                 background: '#FBBC04',
                 borderColor: '#FBBC04',
@@ -34,21 +36,21 @@ function Map(props) {
             });
   
             const marker = new window.google.maps.marker.AdvancedMarkerElement({
-                position,
+                position: { lat, lng },
                 map: map,
-                title: title,
+                title: english_name,
                 content: pinElement.element,
                 gmpClickable: true,
                 
             });
 
             marker.addListener('click', () => {
-                window.location.href="/detail/"+title;
+                window.location.href="/detail/"+ english_name;
             });
         });
 
         } else if(props.page == "detail") {
-            props.markerInfo.forEach(({ position, title}) => {
+            props.markerInfo.forEach(({ lat, lng, english_name }) => {
                 const pinElement = new window.google.maps.marker.PinElement({
                     background: '#FBBC04',
                     borderColor: '#FBBC04',
@@ -58,19 +60,18 @@ function Map(props) {
                 });
     
                 const marker = new window.google.maps.marker.AdvancedMarkerElement({
-                    position,
+                    position: { lat, lng },
                     map: map,
-                    title: title,
+                    title: english_name,
                     content: pinElement.element,
                     gmpClickable: true,
                     
                 });
 
                 marker.addListener('click', () => {
-                    alert(title); // Code modification required(open Modal window): Enlarge map when clicking on the marker
+                    props.isOpen(true, props.markerInfo); // open modal window
                 });
             });
-
         }
     }, [map])
 
